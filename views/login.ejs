@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+    <style>
+        h1{
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+    </style>
+</head>
+<body>
+    <h1>User Login</h1>
+  <div class="login-page">
+    <div class="form">
+    <form action="/process_login" method="post" class="login-form">
+	<div class="container bg-white pb-5">
+    <div class="row d-flex justify-content-start align-items-center mt-sm-5">
+        <div class="col-lg-5 col-10">
+            
+            <div class="pb-5"><img src="https://www.kindpng.com/picc/m/578-5789970_hands-holding-book-clipart-image-black-and-white.png">
+            </div>
+                   </div>
+        <div class="col-lg-4 offset-lg-2 col-md-6 offset-md-3">
+            
+            <div class="mt-3 mt-md-5">
+                <h5>Log in to your account</h5>
+                <form class="pt-4">
+                    <div class="d-flex flex-column pb-3"> <label for="email">User Name</label> <input type="Username" name="username" id="emailId" class="border-bottom border-primary"> </div>
+                    <div class="d-flex flex-column pb-3"> <label for="password">Password</label> <input type="password" name="password" id="pwd" class="border-bottom border-primary"> </div>
+                    
+                    <button class="btn btn-primary btn-block mb-3">Login</button>
+
+                    
+                </form>
+                <h6>Don't Have An Account <a href="/register">Sign Up</a></h6>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+</div>
+
+</body>
+</html>

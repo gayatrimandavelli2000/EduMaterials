@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: #f3f5f9;
+    }
+
+    .wrapper {
+        display: flex;
+        position: relative;
+    }
+
+    .wrapper .sidebar {
+        width: 200px;
+        height: 100%;
+        background: #4b4276;
+        padding: 30px 0px;
+        position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+        padding: 15px;
+        border-bottom: 1px solid #bdb8d7;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .wrapper .sidebar ul li a {
+        color: #bdb8d7;
+        display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+        width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+        background-color: #594f8d;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+        color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+
+    .wrapper .sidebar .social_media a {
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+        width: 100%;
+        margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+        padding: 20px;
+        background: #fff;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+    }
+
+    .wrapper .main_content .info div {
+        margin-bottom: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+    .card-circle {
+        text-align: center;
+        margin-top: 20px;
+        background: #594f8d;
+        margin-left: -30px;
+        border: 4px solid transparent;
+        color: #fff;
+        Font-family: Montserrat;
+        padding: 20px;
+        border-radius: 50%;
+    }
+
+    .card-circle .card-title {
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .card-circle .card-text {
+        font-weight: 200;
+    }
+
+    .card-circle .card-icon i {
+        font-size: 60px;
+        display: block;
+    }
+
+    .card-circle:nth-child(2) {
+        background: #594f8d;
+    }
+
+    .card-circle .btn {
+        Font-family: Montserrat;
+        background: transparent;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        padding: 2px 15px;
+        border-radius: 0px;
+        Font-weight: 150;
+    }
+
+    .card-circle .btn,
+    .card-circle .card-icon i,
+    .card-circle {
+        transition: all ease-in-out 0.2s;
+    }
+
+    .card-circle:hover .btn {
+        background: #00A8CC;
+        color: #fff;
+        border: 1px solid transparent;
+    }
+
+    .card-circle .btn:hover {
+        transform: scale(1.1);
+    }
+
+    .card-circle:hover {
+        border: 5px solid #00A8CC;
+    }
+
+    .card-circle:hover i {
+        text-shadow: 0px -1px 10px #00A8CC;
+        transform: scale(1.2)rotate(20deg);
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .card-circle:nth-child(3) {
+            margin-left: -40px;
+            z-index: 0;
+        }
+
+        .card-circle {
+            width: 170px;
+            height: 170px;
+        }
+
+        .card-circle:nth-child(2) {
+            margin-left: -20px;
+            box-shadow: 1px 2px 20px 8px rgba(241, 235, 235, 0.12);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+
+        .card-circle:nth-child(4) {
+            margin-left: -20px;
+            box-shadow: 1px 2px 20px 8px rgba(241, 235, 235, 0.12);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+
+        .card-circle .card-icon i {
+            margin-top: 20px;
+        }
+    }
+
+    @media only screen and (min-width: 991px) and (max-width: 1200px) {
+        .card-circle {
+            width: 150px;
+            height: 150px;
+        }
+
+        .card-circle .card-icon i {
+            font-size: 50px;
+        }
+
+        .card-circle .card-icon i {
+            margin-top: -25px;
+        }
+
+        .card-circle:nth-child(3) {
+            margin-left: -50px;
+            z-index: 0;
+        }
+
+        .card-circle:nth-child(2) {
+            margin-left: -20px;
+            z-index: 1;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>EDU HUB</h2>
+            <ul>
+                <li><a href="/adminhome"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/adminprofile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="/adminbooks"><i class="fas fa-book"></i>Ebooks</a></li>
+                <li><a href="/adminiq"><i class="fas fa-question"></i>Interview Questions</a></li>
+                <li><a href="/adminregbooks"><i class="fas fa-book"></i>Regulation Books</a></li>
+                <li><a href="/adminquiz"><i class="fas fa-q"></i>Quiz</a></li>
+                <li><a href="/adminsuggestions"><i class="fas fa-lightbulb"></i>Suggestions</a></li>
+
+            </ul>
+
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <h1>EDUCATIONAL HUB REGULATION SUGGESTIONS
+            </div>
+            </h1>
+            <div class="info">
+                <div>
+                    <div>
+                        <!-- <section class="counters">
+                            <div class="container row" style="margin-left: 150px;">
+                                <div class="col-md-1"></div>
+
+                                <div class="col-md-2 card"
+                                    style="border-radius: 20%;padding: 10px;background-color: #594f8d;color: white;">
+                                    <div class="counter" data-target="<%= rating1 %>">
+                                        <h1 style="color: #594f8d;font-size: large;">
+                                            0
+                                        </h1>
+                                    </div>
+                                    <h3>Rating 1</h3>
+                                </div>
+                                <div style="padding: 5px;"></div>
+
+                                <div class="col-md-2 card"
+                                    style="border-radius: 20%;padding: 10px;background-color:#594f8d;color: white;">
+                                    <div class=" counter" data-target="<%= rating2 %>">0</div>
+                                    <h3>Rating 2</h3>
+                                </div>
+                                <div style="padding: 5px;"></div>
+
+                                <div class="col-md-2 card"
+                                    style="border-radius: 20%;padding: 10px;background-color: #594f8d;color: white;">
+                                    <div class=" counter" data-target="<%= rating3 %>">0</div>
+                                    <h3>Rating 3</h3>
+                                </div>
+                                <div style="padding: 5px;"></div>
+
+                                <div class="col-md-2 card"
+                                    style="border-radius: 20%;padding: 10px;background-color: #594f8d;color: white;">
+                                    <div class=" counter" data-target="<%= rating4 %>">0</div>
+                                    <h3>Rating 4</h3>
+                                </div>
+                                <div style="padding: 5px;"></div>
+
+                                <div class="col-md-2 card"
+                                    style="border-radius: 20%;padding: 10px;background-color: #594f8d;color:  white;">
+                                    <div class=" counter" data-target="<%= rating5 %>">0</div>
+                                    <h3>Rating 5</h3>
+                                </div>
+                            </div>
+                        </section> -->
+                        <div class="container">
+                            <div class="row" style="margin-left: 200px;">
+                                <!-- card1 -->
+                                <div class="card card-circle">
+                                    <div class="card-icon">
+                                        <h1>
+                                            <%= rating1 %>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rating 1</h5>
+
+
+                                    </div>
+                                </div>
+                                <!-- card2 -->
+                                <div class="card card-circle">
+                                    <div class="card-icon">
+                                        <h1>
+                                            <%= rating2 %>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rating 2</h5>
+
+
+                                    </div>
+                                </div>
+                                <!-- card3 -->
+                                <div class="card card-circle ">
+                                    <div class="card-icon">
+                                        <h1>
+                                            <%= rating3 %>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rating 3</h5>
+
+
+                                    </div>
+                                </div>
+                                <div class="card card-circle">
+                                    <div class="card-icon">
+                                        <h1>
+                                            <%= rating4 %>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rating 4</h5>
+
+                                    </div>
+                                </div>
+                                <div class="card card-circle">
+                                    <div class="card-icon">
+                                        <h1>
+                                            <%= rating5 %>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rating 5</h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <% if(docs.length==0) { %>
+                        <h1 style="color: #594f8d;margin-top: 300px;">NO SUGGESTIONS FOUND</h1>
+                        <% } %>
+                            <div class="row">
+                                <% for(var i=0; i < docs.length; i++) { %>
+
+                                    <div style="width: 28rem; background-color: #594f8d;color: white;"
+                                        class="card col-md-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                UserName : <%= docs[i].username %>
+                                            </h5>
+                                            <h5 class="card-title">
+                                                Suggestion : <%= docs[i].suggestion %>
+                                            </h5>
+                                            <h5 class="card-title">
+                                                Rating : <%= docs[i].rating %>
+                                            </h5>
+
+                                            <p class="card-text">
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+
+                                    <% } %>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const counters = document.querySelectorAll('.counter');
+            const speed = 50;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = count + inc;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: #f3f5f9;
+    }
+
+    .wrapper {
+        display: flex;
+        position: relative;
+    }
+
+    .wrapper .sidebar {
+        width: 200px;
+        height: 100%;
+        background: #4b4276;
+        padding: 30px 0px;
+        position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+        padding: 15px;
+        border-bottom: 1px solid #bdb8d7;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .wrapper .sidebar ul li a {
+        color: #bdb8d7;
+        display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+        width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+        background-color: #594f8d;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+        color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+
+    .wrapper .sidebar .social_media a {
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+        width: 100%;
+        margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+        padding: 20px;
+        background: #fff;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+    }
+
+    .wrapper .main_content .info div {
+        margin-bottom: 20px;
+    }
+
+    :root {
+        --background: #313131;
+        --main-color: #e91e62e1;
+        --hover-color: #e91e6277;
+    }
+
+
+    .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>EDU HUB</h2>
+            <ul>
+                <li><a href="/adminhome"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/adminprofile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="/adminbooks"><i class="fas fa-book"></i>Ebooks</a></li>
+                <li><a href="/adminiq"><i class="fas fa-question"></i>Interview Questions</a></li>
+                <li><a href="/adminregbooks"><i class="fas fa-book"></i>Regulation Books</a></li>
+                <li><a href="/adminquiz"><i class="fas fa-q"></i>Quiz</a></li>
+                <li><a href="/adminsuggestions"><i class="fas fa-lightbulb"></i>Suggestions</a></li>
+
+            </ul>
+
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <h1>EDUCATIONAL HUB ECE QUIZ
+            </div>
+            </h1>
+            <div class="info">
+                <div class="view">
+                    <div class="content">
+                        <span>
+                            <% for(var i=1;i <=noofq;i++) { %>
+                                <div onclick="editPopup(<%= i %>)"
+                                    style="font-size: 20px;height: 50px;background-color: #594f8d;border-radius: 100%;width: 50px;color: white;align-items: center;"
+                                    class="card">
+                                    <div style="margin-left: 20px;padding-top: 14px;">
+                                        <%= i %>
+                                    </div>
+                                </div>
+
+                                <% } %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-popup" id="myForm"
+                    style="margin-right: 300px;margin-bottom: 320px;width: 700px;background-color:#4b4276;color: white;">
+                    <form action="/ecequiz" class="form-container" method="post">
+                        <div class="container">
+                            <div style="margin: 10px;">
+                                <div style="margin-left: 220px; font-size: 24px;">Enter <input id="val" readonly
+                                        style="width: 15px;" /> Question<br /><br /></div>
+
+                                Enter Question : <textarea style="height: 50px;width: 300px;"
+                                    name="ques"></textarea><br /><br />
+                                Option 1 : <input type="text" name="opt1"><br /><br />
+                                Option 2 : <input type="text" name="opt2"><br /><br />
+                                Option 3 : <input type="text" name="opt3"><br /><br />
+                                Option 4 : <input type="text" name="opt4"><br /><br />
+                                <input type="hidden" name="sub" value="<%= sub %>">
+                                <input type="hidden" name="noofq" value="<%= noofq %>">
+                                Answer Option : a <input type="radio" name="ans" value="a"> b <input type="radio"
+                                    name="ans" value="b"> c
+                                <input type="radio" name="ans" value="c">d <input type="radio" name="ans" value="d">
+                            </div>
+                            <button type="submit" class="btn" style="margin-left: 160px;" value=""
+                                name="edit">SUBMIT</button><br>
+                            <button type="button" class="btn cancel" onclick="closeForm()"
+                                style="margin-left: 170px;">Close</button>
+                        </div>
+                    </form>
+                </div>
+                <script>
+
+                    function editPopup(i) {
+                        document.getElementById("myForm").style.display = "block";
+                        document.getElementById("val").value = i;
+                        console.log(i);
+                    }
+
+                    function closeForm() {
+                        document.getElementById("myForm").style.display = "none";
+                    }
+// line 29
+
+                </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

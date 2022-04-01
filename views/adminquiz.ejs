@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: #f3f5f9;
+    }
+
+    .wrapper {
+        display: flex;
+        position: relative;
+    }
+
+    .wrapper .sidebar {
+        width: 200px;
+        height: 100%;
+        background: #4b4276;
+        padding: 30px 0px;
+        position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+        padding: 15px;
+        border-bottom: 1px solid #bdb8d7;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .wrapper .sidebar ul li a {
+        color: #bdb8d7;
+        display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+        width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+        background-color: #594f8d;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+        color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+
+    .wrapper .sidebar .social_media a {
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+        width: 100%;
+        margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+        padding: 20px;
+        background: #fff;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+    }
+
+    .wrapper .main_content .info div {
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>EDU HUB</h2>
+            <ul>
+                <li><a href="/adminhome"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/adminprofile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="/adminbooks"><i class="fas fa-book"></i>Ebooks</a></li>
+                <li><a href="/adminiq"><i class="fas fa-question"></i>Interview Questions</a></li>
+                <li><a href="/adminregbooks"><i class="fas fa-book"></i>Regulation Books</a></li>
+                <li><a href="/adminquiz"><i class="fas fa-q"></i>Quiz</a></li>
+                <li><a href="/adminsuggestions"><i class="fas fa-lightbulb"></i>Suggestions</a></li>
+
+            </ul>
+
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <h1>EDUCATIONAL HUB QUIZ
+            </div>
+            </h1>
+            <div class="info">
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Upload Quizzes </h1>
+                        <!-- 
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- CSE -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2 ripple">
+                                <a href="admincsequiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Computer Science
+                                                    and
+                                                    Engineering</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 50px;font-size: 30px;">CSE
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-laptop-code fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- CSE -->
+                        <!-- IT -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2 ripple">
+                                <a href="adminitquiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Information
+                                                    Technology</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 70px;font-size: 30px;">IT
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-microchip fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- IT -->
+                        <!-- ECE -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2 ripple">
+                                <a href="adminecequiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Electronics and
+                                                    Communication
+                                                    Engineering</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 50px;font-size: 30px;">ECE
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-satellite-dish fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ECE -->
+
+                        <!-- EEE -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2 ripple">
+                                <a href="admineeequiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Electrical and
+                                                    Electronics
+                                                    Engineering</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 50px;font-size: 30px;">EEE
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-bolt fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- EEE -->
+
+                        <!-- CIVIL -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2 ripple">
+                                <a href="admincivilquiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Civil
+                                                    Engineering
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 50px;font-size: 30px;">CIVIL
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-drafting-compass fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- CIVIL -->
+
+                        <!-- Mechanical -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2 ripple">
+                                <a href="adminmechquiz" style="text-decoration:none;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Mechanical
+                                                    Engineering
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"
+                                                    style="padding-left: 120px;padding-top: 50px;font-size: 30px;">MECH
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mechanical -->
+
+
+
+                    <!-- Content Row -->
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

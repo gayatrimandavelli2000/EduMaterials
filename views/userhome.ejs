@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Side Navigation Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#4e73df">
+  <title> EDU Materials</title>
+  <link href="images/logo-trans.png" rel="shortcut icon" type="image/x-icon">
+  <!-- Custom fonts-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  body {
+    background-color: #f3f5f9;
+  }
+
+  .wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  .wrapper .sidebar {
+    width: 200px;
+    height: 100%;
+    background: #4b4276;
+    padding: 30px 0px;
+    position: fixed;
+  }
+
+  .wrapper .sidebar h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .wrapper .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .wrapper .sidebar ul li a {
+    color: #bdb8d7;
+    display: block;
+  }
+
+  .wrapper .sidebar ul li a .fas {
+    width: 25px;
+  }
+
+  .wrapper .sidebar ul li:hover {
+    background-color: #594f8d;
+  }
+
+  .wrapper .sidebar ul li:hover a {
+    color: #fff;
+  }
+
+  .wrapper .sidebar .social_media {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+  .wrapper .sidebar .social_media a {
+    display: block;
+    width: 40px;
+    background: #594f8d;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .wrapper .main_content {
+    width: 100%;
+    margin-left: 200px;
+  }
+
+  .wrapper .main_content .header {
+    padding: 20px;
+    background: #fff;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+  }
+
+  .wrapper .main_content .info {
+    margin: 20px;
+    color: #717171;
+    line-height: 25px;
+  }
+
+  .wrapper .main_content .info div {
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>EDU HUB</h2>
+      <ul>
+        <li><a href="/userhome"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/userprofile"><i class="fas fa-user"></i>Profile</a></li>
+        <li><a href="/userbooks"><i class="fas fa-book"></i>Ebooks</a></li>
+        <li><a href="/useriq"><i class="fas fa-question"></i>Interview Questions</a></li>
+        <li><a href="/userregbooks"><i class="fas fa-book"></i>Regulation Books</a></li>
+        <li><a href="/usercompilers"><i class="fas fa-desktop"></i>Compilers</a></li>
+        <li><a href="/usertimetable"><i class="fas fa-clock"></i>Time Table</a></li>
+        <li><a href="/usersoftware"><i class="fas fa-store"></i>SoftWare Tools</a></li>
+        <li><a href="/userforums"><i class="fas fa-blog"></i>Forums</a></li>
+        <li><a href="/userquiz"><i class="fas fa-question"></i>Quiz</a></li>
+        <li><a href="/usersuggestions"><i class="fas fa-lightbulb"></i>Suggestions</a></li>
+      </ul>
+
+    </div>
+    <div class="main_content">
+      <div class="header">
+        <div class="row">
+          <div class="col md-11">
+            <h1>EDUCATIONAL HUB HOME</h1>
+          </div>
+          <hr>
+          <div class="col-md-1">
+            <img src="https://www.pngfind.com/pngs/m/80-804674_png-file-male-user-vector-transparent-png.png"
+              style="height: 100px;width: 100px;border-radius: 100%;" onclick="openPopup()">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">DASHBOARD</h1>
+            <!-- 
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Total Registered Users -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Users
+                      </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <%= regusers %>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Materials  -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Materials</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">2468</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-book fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seminar Topics -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Seminar Topics</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">40</div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-chess fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Total Softwares -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Softwares</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">96</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-bookmark fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Statistics</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Resources</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> Materials
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Seminar Topics
+                    </span>
+
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> Interview-Questions
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-warning"></i> E-Books
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-danger"></i> Softwares
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Content Row -->
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

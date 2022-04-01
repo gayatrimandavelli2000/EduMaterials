@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: #f3f5f9;
+    }
+
+    .wrapper {
+        display: flex;
+        position: relative;
+    }
+
+    .wrapper .sidebar {
+        width: 200px;
+        height: 100%;
+        background: #4b4276;
+        padding: 30px 0px;
+        position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+        padding: 15px;
+        border-bottom: 1px solid #bdb8d7;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .wrapper .sidebar ul li a {
+        color: #bdb8d7;
+        display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+        width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+        background-color: #594f8d;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+        color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+
+    .wrapper .sidebar .social_media a {
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+        width: 100%;
+        margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+        padding: 20px;
+        background: #fff;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+    }
+
+    .wrapper .main_content .info div {
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>EDU HUB</h2>
+            <ul>
+                <li><a href="/adminhome"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/adminprofile"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="/adminbooks"><i class="fas fa-book"></i>Ebooks</a></li>
+                <li><a href="/adminiq"><i class="fas fa-question"></i>Interview Questions</a></li>
+                <li><a href="/adminregbooks"><i class="fas fa-book"></i>Regulation Books</a></li>
+                <li><a href="/adminsuggestions"><i class="fas fa-lightbulb"></i>Suggestions</a></li>
+
+            </ul>
+
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <h1>EDUCATIONAL HUB REGULATION BOOKS (LAB MANUALS)
+            </div>
+            </h1>
+            <div class="info">
+                <form action="/adminmaterials" method="post" class="login-form" style="margin-left: 400px"
+                    enctype="multipart/form-data">
+                    <div role="main" class="form-all">
+                        <ul class="form-section page-section">
+
+
+                            <li class="form-line" data-type="control_textbox" id="id_4" style="margin-left: 200px;">
+                                <label class="form-label form-label-top form-label-auto" id="label_4" for="input_1">
+                                    Branch </label>
+                                <div id="cid_4" class="form-input-wide">
+                                    <select name="branch"
+                                        style="padding-left: 125px;border-radius: 6px;padding-top: 11px;">
+                                        <option></option>
+                                        <option>CSE</option>
+                                        <option>IT</option>
+                                        <option>ECE</option>
+                                        <option>EEE</option>
+                                        <option>MECH</option>
+                                        <option>CIVIL</option>
+                                    </select>
+                                </div>
+                            </li>
+
+                            <li class="form-line" data-type="control_textbox" id="id_4" style="margin-left: 200px;">
+                                <label class="form-label form-label-top form-label-auto" id="label_4" for="input_1">
+                                    Semester </label>
+                                <div id="cid_4" class="form-input-wide">
+                                    <select name="semester"
+                                        style="padding-left: 125px;border-radius: 6px;padding-top: 11px;">
+                                        <option></option>
+                                        <option>1-1</option>
+                                        <option>1-2</option>
+                                        <option>2-1</option>
+                                        <option>2-2</option>
+                                        <option>3-1</option>
+                                        <option>3-2</option>
+                                        <option>4-1</option>
+                                        <option>4-2</option>
+                                    </select>
+                                </div>
+                            </li>
+
+                            <li class="form-line" data-type="control_textbox" id="id_4" style="margin-left: 200px;">
+                                <label class="form-label form-label-top form-label-auto" id="label_4" for="input_1">
+                                    Subject </label>
+                                <div id="cid_4" class="form-input-wide">
+                                    <input type="text" id="input_3" name="subject" class="form-textbox" size="20"
+                                        style="padding-top: 11px; border-radius: 6px;" />
+                                </div>
+                            </li>
+
+                            <li class="form-line" data-type="control_textbox" id="id_4" style="margin-left: 200px;">
+                                <label class="form-label form-label-top form-label-auto" id="label_4" for="input_1">
+                                </label>
+                                <div id="cid_4" class="form-input-wide">
+                                    <input type="file" id="input_4" name="bfile" class="form-textbox" size="20"
+                                        style="padding-top: 11px; border-radius: 6px;" />
+                                </div>
+                            </li>
+                            <br />
+                            <li class="form-line" data-type="control_button" id="id_2">
+                                <div id="cid_2" class="form-input-wide">
+                                    <div style="margin-left:156px" data-align="auto"
+                                        class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                                        <button
+                                            class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                                            style="margin-left: 44px; padding-top: 10px; padding-left: 23px; padding-right: 23px;">submit</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

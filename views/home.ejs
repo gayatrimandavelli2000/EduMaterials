@@ -1,0 +1,136 @@
+<div style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-between;align-items: center;padding: 0 20px;">
+    <h1>Welcome TO Educational Hub</h1>
+    <div class="login-page">
+        <div class="form">
+          <form action="/adminlogin" method="get" class="login-form">
+    <div class="b-wrap" id="b-wrap">
+    <button style = "margin-left: 1000px;" class="start" id="start">Admin Login</button>
+    </div>
+    </form>
+    <form action="/login" method="get" class="login-form">
+    <div class="b-wrap" id="b-wrap">
+      <button style = "margin-left: 1000px;" class="start" id="start">User Login</button>
+      </div>
+      </form>
+    </div>
+  
+    <div class="bar" id="bar">
+    <div id="text-container" class="bar_content"></div>
+    </div>
+    <div id="container">
+        
+        <div>
+            <img src="https://hack.codingblocks.com/_nuxt/img/d688d5e.gif" id="dispalyImage" alt="" />
+        </div>
+    </div>
+
+</div>
+</div>
+
+    <!-- <div id="label-container"></div> -->
+    <style>
+        html{
+            overflow-x: hidden;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .bar {
+      position: absolute;
+      top: 88px;
+      left: 0;
+    
+      width: 100%;
+      padding: 10px 0;
+    
+      background: transparent;
+      color: white;
+    
+      font-family: Gelasio;
+      font-size: 20px;
+    }
+    
+    .bar_content {
+      display: block; /* Important to give the content a width */
+    
+      width: 100%;
+      transform: translateX(100%); /* Animation start out of the screen */
+    
+      /* Add the animation */
+      animation: move 30s linear infinite /* infinite make reapeat the animation indefinitely */;
+    }
+    
+    /* Create the animation */
+    @keyframes move {
+      to { transform: translateX(-100%); }
+    }
+        #webcam-container > canvas{
+            border-bottom: 5px solid transparent;
+      box-shadow: 0px 20px 20px -10px #4e4e4e;
+      border-image: linear-gradient(to right, #D04A02 20%, #FFB600 20%, #FFB600 40%, #E0301E 40%, #E0301E 60%, #EB8C00 60%, #EB8C00 80%, #D93954 80%, #D93954 100%);
+      border-image-slice: 1;
+            height: 400px;
+            width: auto;
+        }
+        body{
+            background: linear-gradient(to right, #ffeeee, #ddefbb);
+        }
+        img{
+            margin-left: 87px;
+            height: 400px;
+            width: auto;
+        }
+        h1{
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        img{
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+      box-shadow:         3px 3px 5px 6px #ccc;
+        }
+        #container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 70px;
+        }
+    
+    .b-wrap {
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .start {
+      width: 140px;
+      height: 45px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 500;
+      color: #000;
+      background-color: #fff;
+      border: none;
+      border-radius: 45px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      outline: none;
+      }
+    
+    .start:hover {
+      background-color: #2EE59D;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      color: #fff;
+      transform: translateY(-7px);
+    }
+    </style>
+    <!--
+        
+        
+    -->
+    
+    
